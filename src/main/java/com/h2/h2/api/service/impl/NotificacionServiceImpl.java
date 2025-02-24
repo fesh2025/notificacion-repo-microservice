@@ -38,9 +38,9 @@ private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "NOT003: Datos requeridos faltantes");
         }
 
-        if (!esTipoValido(notificacion.getTipo())) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "NOT001: Tipo de notificación inválido");
-        }
+//        if (!esTipoValido(notificacion.getTipo())) {
+//            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "NOT001: Tipo de notificación inválido");
+//        }
 
         // Simulación de verificación de cliente
         if (!clienteExiste(notificacion.getClienteId())) {
@@ -80,9 +80,9 @@ private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("
         return response;
     }
 
-    private boolean esTipoValido(String tipo) {
-        return "FACTURACION".equalsIgnoreCase(tipo);
-    }
+//    private boolean esTipoValido(String tipo) {
+//        return "FACTURACION".equalsIgnoreCase(tipo);
+//    }
 
     private boolean clienteExiste(String clienteId) {
         return true;
